@@ -1,0 +1,22 @@
+
+.wrap {
+    background: skyblue; /*변환됨 */
+    &:hover {
+        background: blue;
+    }
+
+    .on {
+        border : spx solid black;
+    }
+
+}
+:global .title {
+    color: red; /* 전역에 적용되는 스타일 - 변환되지 않음 */
+}
+
+:global .title.on {
+    color: red; //타이틀쪽에 on이 추가되면 경계선이 그어지도록 해준다.
+    &.on {
+        border: 2px solid black;
+    }
+}

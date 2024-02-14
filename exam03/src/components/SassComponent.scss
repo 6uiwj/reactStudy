@@ -1,0 +1,53 @@
+@import './utils.scss';
+
+.SassComponent {
+    display: flex;
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background: gray;
+
+        //&: 현재 중괄호 안에 있는 동일한 선택자
+        &.red { /* .box.red와 동일함 */ 
+            //변수 형태로 색상 값을 입력 -> 여러 곳에서 재활용 
+            background: $red;
+            @include square(1); /* 32px X 32px */
+        }
+
+        &.orange {
+            background: $orange;
+            @include square(2); /* 64px X 64px */
+        }
+
+        &.yellow {
+            background: $yellow;
+            @include square(3);
+        }
+
+        &.green {
+            background: $green;
+            @include square(4);
+        }
+
+        &.blue {
+            background: $blue;
+            @include square(5);
+        }
+
+        &.indigo {
+            background: $indigo;
+            @include square(6);
+        }
+
+        &.violet {
+            background: $violet;
+            @include square(7);
+        }
+
+        &:hover {
+            background: black;
+        }
+    }
+
+}
