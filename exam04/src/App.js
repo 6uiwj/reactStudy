@@ -10,8 +10,8 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route index element={<Home />} /> {/* Outlet */}
+        <Route path="/about" element={<About />} /> {/* Outlet */}
       </Route>
       {/*하단에 정의하는 이유 : 상단쪽을 먼저 체크해보고 없으면 마지막에 유입 */}
       <Route path="*" element={<NotFound />} />{' '}
