@@ -18,11 +18,15 @@ const TodoBox = styled.ul`
 `;
 
 //함수명은 대문자 시작으로 쓰는 것이 관례
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onDoubleClick }) => {
   return (
     <TodoBox>
       {todos && todos.length > 0 ? (
-        todos.map((todo) => <li key={todo.id}>{todo.title}</li>)
+        todos.map((todo) => (
+          <li key={todo.id} onDoubleClick={() => onDoubleClick(todo.id)}>
+            {todo.title}
+          </li>
+        ))
       ) : (
         <li>할일을 등록하세요.</li>
       )}
